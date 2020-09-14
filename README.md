@@ -1,5 +1,5 @@
 # React_Sept14
 
-![start](screenshots/start.png)
-![positive](screenshots/positive.png)
-![negative](screenshots/negative.png)
+<img src="screenshots/start.png" width="250">
+<img src="screenshots/positive.png" width="250">
+<img src="screenshots/negative.png" width="250">
