@@ -1,24 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 
 
 function App() {
 
   const [counter, setCounter] = useState(0);
+  const increase = () => setCounter(counter + 1);
+  const decrease = () => setCounter(counter - 1);
 
   return (
     <View style={styles.container}>
-      <Button
-        style={styles.button}
-        title="+"
-        onPress={() => setCounter(counter + 1)} />
+      <TouchableOpacity
+        onPress={decrease}>
+        <View style={styles.button, {backgroundColor: '#FF7B7B'}}>
+          <Text style={styles.counter}>-</Text>
+        </View>
+      </TouchableOpacity>
       <Text style={styles.counter}>{counter}</Text>
-      <Button
-        style={styles.button}
-        title="-"
-        onPress={() => setCounter(counter - 1)} />
+      <TouchableOpacity
+        onPress={increase}>
+        <View style={styles.button, {backgroundColor: '#7BFF83'}}>
+          <Text style={styles.counter}>+</Text>
+        </View>
+      </TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
@@ -30,10 +36,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
   },
   counter: {
-    fontSize: 30,
+    fontSize: 50,
+    marginHorizontal: 30,
+  },
+  button: {
+    paddingHorizontal: 8,
   },
 });
 
